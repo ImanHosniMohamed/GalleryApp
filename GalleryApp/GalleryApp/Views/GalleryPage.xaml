@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:translate="clr-namespace:GalleryApp.Resources"
+             x:Class="GalleryApp.Views.GalleryPage"  Title="{x:Static translate:AppResources.Gallery}" 
+             BackgroundColor="#F2F2F2">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Search"  IconImageSource="search"/>
+    </ContentPage.ToolbarItems>
+    
+    <ContentPage.Content>
+        
+        <StackLayout>
+            <Label Text="There are no items available to be displayed"
+               Style="{StaticResource LargeLabel}"
+                   />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
