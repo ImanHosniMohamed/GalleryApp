@@ -17,8 +17,8 @@ namespace GalleryApp.ViewModel
         private ObservableCollection<Article> articles;
         IArticleServices articleServices = new ArticleServices();
 
-        private ObservableCollection<Data> _data;
-        public ObservableCollection<Data> Data
+        private Data _data;
+        public Data Data
         {
             get { return _data; }
             set
@@ -42,6 +42,7 @@ namespace GalleryApp.ViewModel
         public async Task GetArticles()
         {
              Data = await articleServices.GetData();
+             
         }
        
     }

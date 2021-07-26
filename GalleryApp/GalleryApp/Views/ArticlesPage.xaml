@@ -16,26 +16,42 @@
     </ContentPage.ToolbarItems>
     
     <ContentPage.Content>
-        <ListView x:Name="ListOfArticles">
+        <Grid>
+            
+        
+        <ListView x:Name="ListOfArticles" 
+                  HasUnevenRows="True"
+                  SeparatorVisibility="None"
+                  VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
              <ListView.ItemTemplate>
              <DataTemplate>
-        <Grid RowDefinitions="220,Auto,Auto,Auto" RowSpacing="0" 
-              BackgroundColor="White"  HeightRequest="335"
+                    <ViewCell>
+                        <Grid BackgroundColor="White" RowDefinitions="220,Auto,Auto,Auto" RowSpacing="0" 
+              HeightRequest="335"
               Margin="25" VerticalOptions="Start">
-            <Image Source="placeholder" HorizontalOptions="FillAndExpand" Aspect="Fill" />
-            <Label Text="This is first picture" Grid.Row="1" TextColor="#686868" FontSize="25"
+                            <Image Source="{Binding urlToImage}" HorizontalOptions="FillAndExpand" Aspect="Fill" />
+                            <Label Text="{Binding title}" Grid.Row="1" TextColor="#686868" FontSize="15"
                    Margin="15,15,0,0" 
                    />
-            <Label Text="updated by" Grid.Row="2" TextColor="#B2ABAB"
+                            <Label Text="{Binding AuthorBy}" Grid.Row="2" TextColor="#B2ABAB"
                    Margin="15,0,0,0" 
                    />
-            <Label Text="date" Grid.Row="3" TextColor="#B2ABAB"
+                            <Label Text="{Binding Date}" Grid.Row="3" TextColor="#B2ABAB"
                    VerticalOptions="End" BackgroundColor="Beige"
                    HorizontalOptions="End" Margin="0,0,15,0"/>
-                        
-        </Grid>
+
+                        </Grid>
+                    </ViewCell>
+       
         </DataTemplate>
              </ListView.ItemTemplate>
-             </ListView> 
+             </ListView>
+
+        <Label Text="Server error ,please try again later" 
+               x:Name="NoData"
+               IsVisible="false"
+               HorizontalOptions="CenterAndExpand"
+              Style="{StaticResource DefaultLabel}"  />
+        </Grid>
     </ContentPage.Content>
 </ContentPage>

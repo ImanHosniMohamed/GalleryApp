@@ -12,5 +12,21 @@ namespace GalleryApp.Models
         public string url { get; set; }
         public string urlToImage { get; set; }
         public DateTime publishedAt { get; set; }
+
+        public string AuthorBy
+        {
+            get
+            {
+                return $"{"By" +" "+ author}";
+            }
+        }
+
+        public string Date
+        {
+            get
+            {
+                return $"{publishedAt.ToString("MMMM dd, yyyy")}";
+            }
+        }
     }
 }

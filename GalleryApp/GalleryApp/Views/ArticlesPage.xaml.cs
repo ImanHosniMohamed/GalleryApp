@@ -22,8 +22,11 @@ namespace GalleryApp.Views
         public ArticlesPage()
         {
             InitializeComponent();
-            ListOfArticles.ItemsSource = articlesViewModel.Data;
-
+            ListOfArticles.ItemsSource = articlesViewModel.Data.articles;
+            if(ListOfArticles.ItemsSource == null)
+            {
+                NoData.IsVisible = true;
+            }
         }
 
        

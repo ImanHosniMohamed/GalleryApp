@@ -9,6 +9,6 @@ namespace GalleryApp.Services
 {
     public interface IArticleServices
     {
-        Task<ObservableCollection<Data>> GetData();
+        Task<Data> GetData();
     }
 }
