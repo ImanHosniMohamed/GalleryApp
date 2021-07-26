@@ -3,19 +3,39 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="GalleryApp.Views.ArticlesPage"
              xmlns:translate="clr-namespace:GalleryApp.Resources"
-             Title="{x:Static translate:AppResources.Articles}" 
-             
-             >
+             xmlns:vm="clr-namespace:GalleryApp.ViewModel"
+             Title="{x:Static translate:AppResources.Articles}" >
 
+    <ContentPage.BindingContext>
+        <vm:ArticlesViewModel/>
+    </ContentPage.BindingContext>
+    
+    
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Search"  IconImageSource="search"/>
     </ContentPage.ToolbarItems>
     
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Articles Page"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <ListView x:Name="ListOfArticles">
+             <ListView.ItemTemplate>
+             <DataTemplate>
+        <Grid RowDefinitions="220,Auto,Auto,Auto" RowSpacing="0" 
+              BackgroundColor="White"  HeightRequest="335"
+              Margin="25" VerticalOptions="Start">
+            <Image Source="placeholder" HorizontalOptions="FillAndExpand" Aspect="Fill" />
+            <Label Text="This is first picture" Grid.Row="1" TextColor="#686868" FontSize="25"
+                   Margin="15,15,0,0" 
+                   />
+            <Label Text="updated by" Grid.Row="2" TextColor="#B2ABAB"
+                   Margin="15,0,0,0" 
+                   />
+            <Label Text="date" Grid.Row="3" TextColor="#B2ABAB"
+                   VerticalOptions="End" BackgroundColor="Beige"
+                   HorizontalOptions="End" Margin="0,0,15,0"/>
+                        
+        </Grid>
+        </DataTemplate>
+             </ListView.ItemTemplate>
+             </ListView> 
     </ContentPage.Content>
 </ContentPage>
