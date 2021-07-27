@@ -4,7 +4,7 @@
              x:Class="GalleryApp.Views.OnlineNewsPage"   
              xmlns:translate="clr-namespace:GalleryApp.Resources"
              Title="{x:Static translate:AppResources.ExploreOnlineNews}" 
-             BackgroundColor="#F2F2F2">
+             Style="{StaticResource Page}">
 
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Search"  IconImageSource="search"/>
@@ -14,7 +14,9 @@
         
         <StackLayout>
             <Label Text="Sorry, service is not available"
-               Style="{StaticResource LargeLabel}"
+               Style="{StaticResource DefaultLabel}"
+                   HorizontalOptions="CenterAndExpand"
+                   
                    />
         </StackLayout>
     </ContentPage.Content>

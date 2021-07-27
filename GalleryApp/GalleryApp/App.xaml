@@ -4,14 +4,20 @@
              x:Class="GalleryApp.App">
     <Application.Resources>
 
+        <!--ContentPage-->
+        <Style TargetType="ContentPage" x:Key="Page">
+            <Setter Property="BackgroundColor" Value="#F2F2F2"/>
+        </Style>
+        
         <!--Label-->
         <Style TargetType="Label" x:Key="DefaultLabel">
             <Setter Property="FontSize" Value="20"/>
-            <Setter Property="VerticalOptions" Value="Center"/>
+            <Setter Property="VerticalOptions" Value="CenterAndExpand"/>
         </Style>
 
         <Style TargetType="Label" x:Key="LargeLabel">
             <Setter Property="FontSize" Value="30"/>
+            <Setter Property="Margin" Value="25,0,25,0"/>
             <Setter Property="VerticalOptions" Value="CenterAndExpand"/>
             <Setter Property="HorizontalOptions" Value="CenterAndExpand"/>
             <Setter Property="HorizontalTextAlignment" Value="Center"/>

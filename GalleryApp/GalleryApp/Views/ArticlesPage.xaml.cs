@@ -22,13 +22,24 @@ namespace GalleryApp.Views
         public ArticlesPage()
         {
             InitializeComponent();
-            ListOfArticles.ItemsSource = articlesViewModel.Data.articles;
-            if(ListOfArticles.ItemsSource == null)
+           ListOfArticles.ItemsSource = articlesViewModel.Data.articles;
+            if (ListOfArticles.ItemsSource == null || articlesViewModel.NoContent)
             {
                 NoData.IsVisible = true;
             }
         }
 
-       
+        private async void ListOfArticles_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        {
+            var selectedItem=  e.SelectedItem as Article;
+            await Navigation.PushAsync(new ArticleDetailsPage(selectedItem));
+
+        }
+
+        private async void TapGestureRecognizer_Tapped(object sender, EventArgs e)
+        {
+            var x = new Article();
+            await Navigation.PushAsync(new ArticleDetailsPage(x));
+        }
     }
 }

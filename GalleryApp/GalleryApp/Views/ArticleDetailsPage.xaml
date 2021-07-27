@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GalleryApp.Views.ArticleDetailsPage"
+             Title="ARTICLE DETAILS" 
+             Style="{StaticResource Page}" NavigationPage.BackButtonTitle="true"
+             >
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Search"  IconImageSource="search"/>
+    </ContentPage.ToolbarItems>
+    
+    
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="FillAndExpand" >
+            <Grid VerticalOptions="FillAndExpand" Margin="20,20,20,0"
+                  BackgroundColor="White" RowSpacing="10"
+                  RowDefinitions="220,Auto,Auto,*"
+                  >
+                <Image Source="placeholder" HorizontalOptions="FillAndExpand" Aspect="Fill" />
+                <Label Text="date"  TextColor="#B2ABAB"
+                   VerticalOptions="End" 
+                   HorizontalOptions="End" Margin="0,0,15,15"/>
+                
+                <Label Text="Title" Grid.Row="1" TextColor="#686868" FontSize="20"
+                   Margin="15,15,15,0" 
+                       VerticalOptions="Start"
+                   />
+                <Label Text="AuthorBy" Grid.Row="2" TextColor="#B2ABAB"
+                   Margin="15,0,15,0"  VerticalOptions="Start"
+                   />
+
+                <Label Text="Description" Grid.Row="3" TextColor="#B2ABAB"
+                   Margin="15,0,15,30"  VerticalOptions="FillAndExpand" 
+                   />
+
+            </Grid>
+
+            <Button BackgroundColor="Black"
+                    Margin="20"
+                    Text="OPEN WEBSITE"
+                    TextColor="White"
+                    FontSize="20"
+                    VerticalOptions="End"
+                    Clicked="OpenUrl_Clicked"
+                    />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

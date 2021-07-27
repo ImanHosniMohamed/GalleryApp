@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:translate="clr-namespace:GalleryApp.Resources"
              x:Class="GalleryApp.Views.GalleryPage"  Title="{x:Static translate:AppResources.Gallery}" 
-             BackgroundColor="#F2F2F2">
+             Style="{StaticResource Page}">
 
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Search"  IconImageSource="search"/>
@@ -13,7 +13,8 @@
         
         <StackLayout>
             <Label Text="There are no items available to be displayed"
-               Style="{StaticResource LargeLabel}"
+               Style="{StaticResource DefaultLabel}"
+                   HorizontalOptions="CenterAndExpand"
                    />
         </StackLayout>
     </ContentPage.Content>

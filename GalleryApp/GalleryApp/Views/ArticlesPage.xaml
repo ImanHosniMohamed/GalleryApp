@@ -4,7 +4,8 @@
              x:Class="GalleryApp.Views.ArticlesPage"
              xmlns:translate="clr-namespace:GalleryApp.Resources"
              xmlns:vm="clr-namespace:GalleryApp.ViewModel"
-             Title="{x:Static translate:AppResources.Articles}" >
+             Title="{x:Static translate:AppResources.Articles}"
+            Style="{StaticResource Page}">
 
     <ContentPage.BindingContext>
         <vm:ArticlesViewModel/>
@@ -20,24 +21,27 @@
             
         
         <ListView x:Name="ListOfArticles" 
-                  HasUnevenRows="True"
+                  HasUnevenRows="True" 
                   SeparatorVisibility="None"
+                  ItemSelected="ListOfArticles_ItemSelected"    
                   VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
              <ListView.ItemTemplate>
              <DataTemplate>
                     <ViewCell>
-                        <Grid BackgroundColor="White" RowDefinitions="220,Auto,Auto,Auto" RowSpacing="0" 
+                        <Grid BackgroundColor="White" 
+                              RowSpacing="0"
+                              RowDefinitions="220,Auto,Auto,Auto" 
               HeightRequest="335"
-              Margin="25" VerticalOptions="Start">
+              Margin="25,25,25,0" VerticalOptions="Start">
                             <Image Source="{Binding urlToImage}" HorizontalOptions="FillAndExpand" Aspect="Fill" />
-                            <Label Text="{Binding title}" Grid.Row="1" TextColor="#686868" FontSize="15"
-                   Margin="15,15,0,0" 
+                            <Label Text="{Binding title}" Grid.Row="1" TextColor="#686868" FontSize="20"
+                   Margin="15,15,15,0" 
                    />
                             <Label Text="{Binding AuthorBy}" Grid.Row="2" TextColor="#B2ABAB"
-                   Margin="15,0,0,0" 
+                   Margin="15,0,15,0" 
                    />
                             <Label Text="{Binding Date}" Grid.Row="3" TextColor="#B2ABAB"
-                   VerticalOptions="End" BackgroundColor="Beige"
+                   VerticalOptions="End" 
                    HorizontalOptions="End" Margin="0,0,15,0"/>
 
                         </Grid>
@@ -47,11 +51,17 @@
              </ListView.ItemTemplate>
              </ListView>
 
-        <Label Text="Server error ,please try again later" 
+            <Label Text="Server error ,please try again later" 
                x:Name="NoData"
                IsVisible="false"
-               HorizontalOptions="CenterAndExpand"
-              Style="{StaticResource DefaultLabel}"  />
+              Style="{StaticResource DefaultLabel}" 
+                   HorizontalOptions="CenterAndExpand"
+               
+               >
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"  />
+                </Label.GestureRecognizers>
+            </Label>
         </Grid>
     </ContentPage.Content>
 </ContentPage>

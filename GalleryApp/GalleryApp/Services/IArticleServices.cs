@@ -10,5 +10,6 @@ namespace GalleryApp.Services
     public interface IArticleServices
     {
         Task<Data> GetData();
+        Task<Data> GetSecondData();
     }
 }

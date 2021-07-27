@@ -38,6 +38,9 @@
     <EmbeddedResource Update="Resources\AppResources.resx">
       <Generator></Generator>
     </EmbeddedResource>
+    <EmbeddedResource Update="Views\ArticleDetailsPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="Views\ArticlesPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
