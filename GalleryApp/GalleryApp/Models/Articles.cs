@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Plugin.Connectivity;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -28,5 +29,7 @@ namespace GalleryApp.Models
                 return $"{publishedAt.ToString("MMMM dd, yyyy")}";
             }
         }
+
+       
     }
 }

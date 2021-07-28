@@ -11,13 +11,13 @@
         
         <!--Label-->
         <Style TargetType="Label" x:Key="DefaultLabel">
-            <Setter Property="FontSize" Value="30"/>
+            <Setter Property="FontSize" Value="20"/>
             <Setter Property="VerticalOptions" Value="CenterAndExpand"/>
             <Setter Property="HorizontalTextAlignment" Value="Center"/>
         </Style>
 
         <Style TargetType="Label" x:Key="LabelSideMenu">
-            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="FontSize" Value="15"/>
             <Setter Property="VerticalOptions" Value="CenterAndExpand"/>
         </Style>
 

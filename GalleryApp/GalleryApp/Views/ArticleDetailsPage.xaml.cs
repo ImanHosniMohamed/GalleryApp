@@ -27,8 +27,15 @@ namespace GalleryApp.Views
 
         private void OpenUrl_Clicked(object sender, EventArgs e)
         {
-            Uri uri = new Uri(SelectedArticle.urlToImage);
-            openBrowser(uri);
+            if (SelectedArticle.urlToImage != "placeholder")
+            {
+                Uri uri = new Uri(SelectedArticle.urlToImage);
+                openBrowser(uri);
+            }
+
+            else
+                DisplayAlert("Warning", "No image found", "ok");
+            
         }
 
         public async void openBrowser(Uri uri)

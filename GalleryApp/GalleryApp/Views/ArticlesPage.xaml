@@ -22,6 +22,7 @@
         
         <ListView x:Name="ListOfArticles" 
                   HasUnevenRows="True" 
+                  Margin="0,0,0,15"
                   SeparatorColor="Transparent"
                   SeparatorVisibility="None"
                   ItemSelected="ListOfArticles_ItemSelected"    
@@ -34,7 +35,14 @@
                               RowSpacing="0"
                               RowDefinitions="220,Auto,Auto,Auto" 
               Margin="25,25,25,0" VerticalOptions="Start">
-                                    <Image Source="{Binding urlToImage}" HorizontalOptions="FillAndExpand" Aspect="Fill" />
+                                    <Image Source="{Binding urlToImage}" HorizontalOptions="FillAndExpand" Aspect="Fill" >
+                                        <!--<Image.Triggers>
+                                            <DataTrigger TargetType="Image" Binding="{Binding urlToImage}" Value="{x:Null}">
+                                                <Setter Property="Source" Value="pladeholder"/>
+                                            </DataTrigger>
+                                        </Image.Triggers>-->
+                                    </Image>
+
                                     <Label Text="{Binding title}" Grid.Row="1" TextColor="#686868" FontSize="20"
                    Margin="15,15,15,5" 
                    />

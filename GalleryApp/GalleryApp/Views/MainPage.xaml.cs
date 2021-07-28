@@ -31,7 +31,7 @@ namespace GalleryApp.Views
             DetailsPage.Navigation.PushAsync(new ArticlesPage()); 
         }
 
-        protected  async override void OnAppearing()
+        protected   override void OnAppearing()
         {
             base.OnAppearing();
         }
