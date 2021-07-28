@@ -1,5 +1,6 @@
 ﻿using GalleryApp.Models;
 using Newtonsoft.Json;
+using Plugin.Connectivity;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -10,14 +11,14 @@ using System.Threading.Tasks;
 
 namespace GalleryApp.Services
 {
-    public class ArticleServices : IArticleServices
+    public class ArticleServices :IArticleServices 
     {
         private static string Api_URL = "https://newsapi.org/v1/articles?source=the-next-web&apiKey=1c0f731cca954a13875e6965f9c7e9de";
         private static string SecondApi_URL = "https://newsapi.org/v1/articles?source=associated-press&apiKey=1c0f731cca954a13875e6965f9c7e9de";
 
         public async Task<Data> GetData()
         {
-
+           
             using (var client = new HttpClient())
             {
                 client.DefaultRequestHeaders.TryAddWithoutValidation("Accept", "application/json");

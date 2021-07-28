@@ -12,7 +12,7 @@ using Xamarin.Forms;
 
 namespace GalleryApp.ViewModel
 {
-    public class ArticlesViewModel:INotifyPropertyChanged
+    public class ArticlesViewModel:BaseViewModel
     {
         private ObservableCollection<Article> articles;
         IArticleServices articleServices = new ArticleServices();
@@ -62,7 +62,7 @@ namespace GalleryApp.ViewModel
 
             GetArticles2();
 
-            if(Data.articles == null || SecondData.articles == null)
+            if(Data?.articles == null || SecondData?.articles == null)
                 NoContent = true;
 
             else

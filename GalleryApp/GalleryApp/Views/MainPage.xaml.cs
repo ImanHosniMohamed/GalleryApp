@@ -10,9 +10,10 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 
-namespace GalleryApp
+namespace GalleryApp.Views
 {
     public partial class MainPage : MasterDetailPage
     {
@@ -21,7 +22,13 @@ namespace GalleryApp
         public MainPage()
         {
             InitializeComponent();
-            Detail = new NavigationPage(new ArticlesPage());
+            var current = Connectivity.NetworkAccess;
+            if (current == NetworkAccess.Internet)
+            {
+                Detail = new NavigationPage(new ArticlesPage());
+
+            }
+            DetailsPage.Navigation.PushAsync(new ArticlesPage()); 
         }
 
         protected  async override void OnAppearing()

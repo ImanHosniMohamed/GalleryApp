@@ -2,8 +2,13 @@
 <MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
                   xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
                   xmlns:translate="clr-namespace:GalleryApp.Resources"
-                  x:Class="GalleryApp.MainPage" >
+                  xmlns:vm="clr-namespace:GalleryApp.ViewModel"
+                  x:Class="GalleryApp.Views.MainPage" >
 
+    <MasterDetailPage.BindingContext>
+        <vm:MainPageViewModel/>
+    </MasterDetailPage.BindingContext>
+    
     <MasterDetailPage.Master>
         <ContentPage Title="Master"  BackgroundColor="#F3F3F3">
             
@@ -25,44 +30,44 @@
                             </StackLayout>
                         </Grid>
 
-                        <StackLayout Grid.Row="1" Margin="0,60,0,0" Spacing="50">
+                        <StackLayout Grid.Row="1" Margin="0,60,0,0" Spacing="30">
                             
-                        <StackLayout Orientation="Horizontal"  Grid.Row="1">
+                        <StackLayout Orientation="Horizontal" >
                             <Image Source="explore" Margin="0,0,15,0" WidthRequest="30" HeightRequest="30"/>
-                                <Label Text="{x:Static translate:AppResources.Articles}" TextTransform="Lowercase" Style="{StaticResource DefaultLabel}"/>
+                                <Label Text="{x:Static translate:AppResources.Articles}" TextTransform="Lowercase" Style="{StaticResource LabelSideMenu}"/>
                                 <StackLayout.GestureRecognizers>
                                     <TapGestureRecognizer Tapped="OpenArticlesPage"/>
                                 </StackLayout.GestureRecognizers>
                             </StackLayout>
 
-                        <StackLayout Orientation="Horizontal" Grid.Row="2">
+                        <StackLayout Orientation="Horizontal" >
                                 <Image Source="live" WidthRequest="30" Margin="0,0,15,0" HeightRequest="30"/>
-                                <Label Text="{x:Static translate:AppResources.LiveChat}" TextTransform="Lowercase" Style="{StaticResource DefaultLabel}"/>
+                                <Label Text="{x:Static translate:AppResources.LiveChat}" TextTransform="Lowercase" Style="{StaticResource LabelSideMenu}"/>
 
                                 <StackLayout.GestureRecognizers>
                                     <TapGestureRecognizer Tapped="OpenLiveChatPage"/>
                                 </StackLayout.GestureRecognizers>
                         </StackLayout>
                         
-                        <StackLayout Orientation="Horizontal" Grid.Row="3">
+                        <StackLayout Orientation="Horizontal" >
                                 <Image Source="gallery" WidthRequest="30" Margin="0,0,15,0" HeightRequest="30"/>
-                                <Label Text="{x:Static translate:AppResources.Gallery}"  Style="{StaticResource DefaultLabel}"/>
+                                <Label Text="{x:Static translate:AppResources.Gallery}"  Style="{StaticResource LabelSideMenu}"/>
                                 <StackLayout.GestureRecognizers>
                                     <TapGestureRecognizer Tapped="OpenGalleryPage"/>
                                 </StackLayout.GestureRecognizers>
 
                             </StackLayout>
-                        <StackLayout Orientation="Horizontal" Grid.Row="4">
+                        <StackLayout Orientation="Horizontal">
                                 <Image Source="wishlist" WidthRequest="30" Margin="0,0,15,0" HeightRequest="30"/>
-                                <Label Text="{x:Static translate:AppResources.WishList}" TextTransform="Lowercase" Style="{StaticResource DefaultLabel}"/>
+                                <Label Text="{x:Static translate:AppResources.WishList}" TextTransform="Lowercase" Style="{StaticResource LabelSideMenu}"/>
 
                                 <StackLayout.GestureRecognizers>
                                     <TapGestureRecognizer Tapped="OpenWishListPage"/>
                                 </StackLayout.GestureRecognizers>
                             </StackLayout>
-                        <StackLayout Orientation="Horizontal" Grid.Row="5">
+                        <StackLayout Orientation="Horizontal" >
                                 <Image Source="onlineNews" WidthRequest="30"  Margin="0,0,15,0" HeightRequest="30"/>
-                                <Label Text="{x:Static translate:AppResources.ExploreOnlineNews}" TextTransform="Lowercase"  Style="{StaticResource DefaultLabel}"/>
+                                <Label Text="{x:Static translate:AppResources.ExploreOnlineNews}" TextTransform="Lowercase"  Style="{StaticResource LabelSideMenu}"/>
 
                                 <StackLayout.GestureRecognizers>
                                     <TapGestureRecognizer Tapped="OpenOnlineNewsPage"/>
@@ -82,18 +87,8 @@
     </MasterDetailPage.Master>
     
     <MasterDetailPage.Detail>
-        <NavigationPage>
-            <x:Arguments>
-        <ContentPage>
-                    <ContentPage.Content>
-
-                        <StackLayout>
-                    <Label Text="detail page"/>
-                </StackLayout>
-                        </ContentPage.Content>
-
-                </ContentPage>
-            </x:Arguments>
+        <NavigationPage x:Name="DetailsPage">
+          
         </NavigationPage>
     </MasterDetailPage.Detail>
 </MasterDetailPage>

@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="GalleryApp.Views.ArticlesPage"
              xmlns:translate="clr-namespace:GalleryApp.Resources"
-             xmlns:vm="clr-namespace:GalleryApp.ViewModel"
+             xmlns:vm="clr-namespace:GalleryApp.ViewModel" xmlns:custom="clr-namespace:GalleryApp.Custom"
              Title="{x:Static translate:AppResources.Articles}"
             Style="{StaticResource Page}">
 
@@ -12,8 +12,8 @@
     </ContentPage.BindingContext>
     
     
-    <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Search"  IconImageSource="search"/>
+    <ContentPage.ToolbarItems >
+        <ToolbarItem Text="Search" IconImageSource="search"/>
     </ContentPage.ToolbarItems>
     
     <ContentPage.Content>
@@ -22,36 +22,37 @@
         
         <ListView x:Name="ListOfArticles" 
                   HasUnevenRows="True" 
+                  SeparatorColor="Transparent"
                   SeparatorVisibility="None"
                   ItemSelected="ListOfArticles_ItemSelected"    
                   VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
              <ListView.ItemTemplate>
              <DataTemplate>
-                    <ViewCell>
-                        <Grid BackgroundColor="White" 
+                        <custom:CustomViewCell SelectedItemBackgroundColor="White">
+                            <ViewCell.View>
+                                <Grid BackgroundColor="White" 
                               RowSpacing="0"
                               RowDefinitions="220,Auto,Auto,Auto" 
-              HeightRequest="335"
               Margin="25,25,25,0" VerticalOptions="Start">
-                            <Image Source="{Binding urlToImage}" HorizontalOptions="FillAndExpand" Aspect="Fill" />
-                            <Label Text="{Binding title}" Grid.Row="1" TextColor="#686868" FontSize="20"
-                   Margin="15,15,15,0" 
+                                    <Image Source="{Binding urlToImage}" HorizontalOptions="FillAndExpand" Aspect="Fill" />
+                                    <Label Text="{Binding title}" Grid.Row="1" TextColor="#686868" FontSize="20"
+                   Margin="15,15,15,5" 
                    />
-                            <Label Text="{Binding AuthorBy}" Grid.Row="2" TextColor="#B2ABAB"
-                   Margin="15,0,15,0" 
+                                    <Label Text="{Binding AuthorBy}" Grid.Row="2" TextColor="#B2ABAB"
+                   Margin="15,0,15,0"  FontSize="15"
                    />
-                            <Label Text="{Binding Date}" Grid.Row="3" TextColor="#B2ABAB"
+                                    <Label Text="{Binding Date}" Grid.Row="3" TextColor="#B2ABAB"
                    VerticalOptions="End" 
-                   HorizontalOptions="End" Margin="0,0,15,0"/>
+                   HorizontalOptions="End" Margin="0,0,15,15"/>
 
-                        </Grid>
-                    </ViewCell>
-       
-        </DataTemplate>
+                                </Grid>
+                            </ViewCell.View>
+                        </custom:CustomViewCell>
+                    </DataTemplate>
              </ListView.ItemTemplate>
              </ListView>
 
-            <Label Text="Server error ,please try again later" 
+            <!--<Label Text="Server error ,please try again later" 
                x:Name="NoData"
                IsVisible="false"
               Style="{StaticResource DefaultLabel}" 
@@ -61,7 +62,7 @@
                 <Label.GestureRecognizers>
                     <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"  />
                 </Label.GestureRecognizers>
-            </Label>
+            </Label>-->
         </Grid>
     </ContentPage.Content>
 </ContentPage>

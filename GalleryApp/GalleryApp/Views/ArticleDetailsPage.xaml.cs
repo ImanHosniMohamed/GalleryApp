@@ -18,6 +18,11 @@ namespace GalleryApp.Views
         {
             InitializeComponent();
             SelectedArticle = selectedArticle;
+            image.Source = selectedArticle.urlToImage;
+            date.Text = selectedArticle.Date;
+            title.Text = selectedArticle.title;
+            author.Text = selectedArticle.AuthorBy;
+            description.Text = selectedArticle.description;
         }
 
         private void OpenUrl_Clicked(object sender, EventArgs e)

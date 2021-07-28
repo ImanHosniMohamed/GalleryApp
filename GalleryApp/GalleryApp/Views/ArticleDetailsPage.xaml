@@ -15,23 +15,25 @@
         <StackLayout VerticalOptions="FillAndExpand" >
             <Grid VerticalOptions="FillAndExpand" Margin="20,20,20,0"
                   BackgroundColor="White" RowSpacing="10"
-                  RowDefinitions="220,Auto,Auto,*"
+                  RowDefinitions="250,Auto,Auto,*"
                   >
-                <Image Source="placeholder" HorizontalOptions="FillAndExpand" Aspect="Fill" />
-                <Label Text="date"  TextColor="#B2ABAB"
+                <Image x:Name="image" HorizontalOptions="FillAndExpand" Aspect="Fill" />
+                <Label x:Name="date"  TextColor="White"
                    VerticalOptions="End" 
                    HorizontalOptions="End" Margin="0,0,15,15"/>
                 
-                <Label Text="Title" Grid.Row="1" TextColor="#686868" FontSize="20"
+                <Label x:Name="title" Grid.Row="1" TextColor="#686868" FontSize="25"
                    Margin="15,15,15,0" 
                        VerticalOptions="Start"
                    />
-                <Label Text="AuthorBy" Grid.Row="2" TextColor="#B2ABAB"
+                <Label  x:Name="author" Grid.Row="2" TextColor="#B2ABAB"
                    Margin="15,0,15,0"  VerticalOptions="Start"
+                        FontSize="15"
                    />
 
-                <Label Text="Description" Grid.Row="3" TextColor="#B2ABAB"
-                   Margin="15,0,15,30"  VerticalOptions="FillAndExpand" 
+                <Label  x:Name="description" Grid.Row="3" TextColor="#B2ABAB"
+                   Margin="15,0,15,30"  VerticalOptions="FillAndExpand"
+                        FontSize="20"
                    />
 
             </Grid>
