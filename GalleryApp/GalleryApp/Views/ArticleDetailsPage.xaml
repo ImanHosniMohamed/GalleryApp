@@ -13,30 +13,33 @@
     
     <ContentPage.Content>
         <StackLayout VerticalOptions="FillAndExpand" >
-            <Grid VerticalOptions="FillAndExpand" Margin="20,20,20,0"
+            <ScrollView>
+                <Grid VerticalOptions="FillAndExpand" Margin="20,20,20,0"
                   BackgroundColor="White" RowSpacing="10"
                   RowDefinitions="250,Auto,Auto,*"
                   >
-                <Image x:Name="image" HorizontalOptions="FillAndExpand" Aspect="Fill" />
-                <Label x:Name="date"  TextColor="White"
+                    <Image x:Name="image" HorizontalOptions="FillAndExpand" Aspect="Fill" />
+                    <Label x:Name="date"  TextColor="White"
                    VerticalOptions="End" 
                    HorizontalOptions="End" Margin="0,0,15,15"/>
-                
-                <Label x:Name="title" Grid.Row="1" TextColor="#686868" FontSize="25"
+
+                    <Label x:Name="title" Grid.Row="1" TextColor="#686868" FontSize="25"
                    Margin="15,15,15,0" 
                        VerticalOptions="Start"
                    />
-                <Label  x:Name="author" Grid.Row="2" TextColor="#B2ABAB"
+                    <Label  x:Name="author" Grid.Row="2" TextColor="#B2ABAB"
                    Margin="15,0,15,0"  VerticalOptions="Start"
                         FontSize="15"
                    />
 
-                <Label  x:Name="description" Grid.Row="3" TextColor="#B2ABAB"
+                    <Label  x:Name="description" Grid.Row="3" TextColor="#B2ABAB"
                    Margin="15,0,15,30"  VerticalOptions="FillAndExpand"
                         FontSize="20"
                    />
 
-            </Grid>
+                </Grid>
+            </ScrollView>
+            
 
             <Button BackgroundColor="Black"
                     Margin="20"
